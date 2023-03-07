@@ -1,6 +1,6 @@
 ---
 - name: update web, nfs and servers
-  hosts: webservers, nfs
+  hosts: webservers
   remote_user: ec2-user
   become: yes
   become_user: root
@@ -10,17 +10,17 @@
         name: wireshark
         state: latest
 
-- name: update LB server
-  hosts: lb, db
-  remote_user: ubuntu
-  become: yes
-  become_user: root
-  tasks:
-    - name: Update apt repo
-      apt: 
-        update_cache: yes
+# - name: update LB server
+#   hosts: lb, db
+#   remote_user: ubuntu
+#   become: yes
+#   become_user: root
+#   tasks:
+#     - name: Update apt repo
+#       apt: 
+#         update_cache: yes
 
-    - name: ensure wireshark is at the latest version
-      apt:
-        name: wireshark
-        state: latest
+#     - name: ensure wireshark is at the latest version
+#       apt:
+#         name: wireshark
+#         state: latest
