@@ -1,3 +1,3 @@
 Ready to go!!
 
-save artifact
+save artifacts
